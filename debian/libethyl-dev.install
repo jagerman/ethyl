@@ -1,0 +1,3 @@
+usr/include/ethyl
+usr/lib/*/lib*.so
+usr/lib/*/pkgconfig/libethyl*
