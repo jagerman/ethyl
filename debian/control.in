@@ -1,0 +1,39 @@
+Source: ethyl
+Priority: optional
+Maintainer: Jason Rhinelander <jason@oxen.io>
+Build-Depends:
+    debhelper-compat (= 13),
+    cmake (>= 3.20),
+    g++ (>= 10),
+    pkg-config,
+    libsecp256k1-dev,
+    libspdlog-dev (>= 1.9.1),
+    nlohmann-json3-dev,
+    libgmp-dev,
+    libfmt-dev (>= 9),
+    liboxenc-dev (>= 1.1.0),
+    libcurl4-dev,
+    libssl-dev
+Standards-Version: 4.4.1
+Section: libs
+Homepage: https://github.com/oxen-io/ethyl
+
+Package: libethyl-dev
+Section: libdevel
+Architecture: any
+Depends: libethyl@LIB_VERSION@ (= ${binary:Version}), ${misc:Depends},
+    liboxenc-dev (>= 1.1.0),
+    nlohmann-json3-dev
+Description: C++ library for Ethereum RPC provider access (headers)
+ This C++20 library provides access to basic HTTP Ethereum RPC providers.
+ .
+ This package contains the library headers and other development files needed
+ to build software using libethyl.
+
+Package: libethyl@LIB_VERSION@
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C++ library for Ethereum RPC provider access
+ This C++20 library provides access to basic HTTP Ethereum RPC providers.
+ .
+ This package contains the library file needed by software built using ethyl.
