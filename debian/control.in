@@ -6,7 +6,6 @@ Build-Depends:
     cmake (>= 3.18),
     g++ (>= 10),
     pkg-config,
-    libsecp256k1-dev,
     nlohmann-json3-dev,
     libgmp-dev,
     liboxenc-dev (>= 1.1.0),
