@@ -25,7 +25,9 @@ override_dh_auto_configure:
 		-DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 \
 		-DBUILD_SHARED_LIBS=ON \
 		-Dethyl_WARNINGS_AS_ERRORS=OFF \
-		-Dethyl_VERSION_SO=ON
+		-Dethyl_VERSION_SO=ON \
+		-DC_SUPPORTS__WCONDITIONAL_UNINITIALIZED=FALSE \
+		-DC_SUPPORTS__WRESERVED_IDENTIFIER=FALSE
 
 override_dh_auto_test:
 	./obj-$(DEB_BUILD_GNU_TYPE)/test/basic_tests --colour-mode ansi
