@@ -4,7 +4,7 @@ Maintainer: Jason Rhinelander <jason@oxen.io>
 Build-Depends:
     debhelper-compat (= 12),
     cmake (>= 3.16),
-    g++ (>= 10),
+    g++-10,
     pkg-config,
     nlohmann-json3-dev,
     libgmp-dev,
