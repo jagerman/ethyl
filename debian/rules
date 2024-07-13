@@ -23,6 +23,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		$(DEB_CMAKE_ARCH_OPTIONS) \
 		-DBUILD_SHARED_LIBS=ON \
+		-Dethyl_WARNINGS_AS_ERRORS=OFF \
 		-Dethyl_VERSION_SO=ON
 
 override_dh_auto_test:
