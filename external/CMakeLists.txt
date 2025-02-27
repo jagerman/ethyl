@@ -45,10 +45,14 @@ if(NOT TARGET oxenc::oxenc)
     system_or_submodule(OXENC oxenc liboxenc>=1.1.0 oxen-encoding)
 endif()
 
-if(NOT TARGET oxen::logging)
-    add_subdirectory(oxen-logging EXCLUDE_FROM_ALL)
+system_or_submodule(OXENLOGGING oxen-logging liboxen-logging>=1.1.0 oxen-logging)
+if(OXENLOGGING_FOUND)
+    add_library(oxen::logging ALIAS oxen-logging::oxen-logging)
+
+    # If we load oxen-logging via system lib then we won't necessarily have fmt/spdlog targets, but
+    # this script will give us them:
+    include(oxen-logging/cmake/load_fmt_spdlog.cmake)
 endif()
-oxen_logging_add_source_dir("${PROJECT_SOURCE_DIR}")
 
 #
 # nlohmann_json
