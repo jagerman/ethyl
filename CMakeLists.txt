@@ -10,7 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # headers), and the 2nd version if anything in the headers change.
 project(
   ethyl
-  VERSION 0.1.0
+  VERSION 0.1.1
   LANGUAGES C CXX
 )
 
